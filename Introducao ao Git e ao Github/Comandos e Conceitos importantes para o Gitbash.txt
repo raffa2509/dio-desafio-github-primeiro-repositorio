@@ -1,0 +1,54 @@
+Aqui estão presentes alguns comandos importantes para você utilizar o Git Bach 
+
+Para você abrir o GitBash, você clica com o botão direito e se dirige a 'mais opções'. Em seguida você seleciona o 'git bash'. 
+Obs: Geralmente, como o meu arquivo está instalado no local 'c' eu me dirijo até lá e abro o Git Bash com o botão direito conforme demonstrado acima. 
+
+Comandos e Conceitos no GitBash:
+
+- openssl sha1 arquivoexemplo = o comando vai me trazer o sha1 de um determinado arquivo que eu especifiquei anteriormente como 'arquivoexemplo'. No Gitbash o arquivo nao fica entre aspas.
+
+- seta pra cima: me faz retornar para o comando que eu utilizei anteriormente 
+
+- Chave SSH é uma forma segura e criptografada de estabelecer conexão entre duas máquinas. nós configuramos nossa máquina para que ela possa estabelecer uma conexão segura com o Github, e ela sempre tem uma chave Privada e uma chave Pública.
+
+- Para criar uma chave SSH na sua máquina para colocar lá na sua página do Github,  você ir ao terminal Git Bash e executar os comandos abaixo: 
+  ssh-keygen -t ed25519 -C raffa2509@gmail.com (aqui eu passei o emial que eu uso no github, é o melhor)
+Você aperta enter e aparece que as chaves serão geradas e o local onde elas, inicalmente deixe elas onde elas estão.
+ficarão armazenadas.
+
+  em seguida aparece para você digitar uma senha, você digita, e segue para ageração da chave. 
+Você pode ir para a pastinha para ver onde estão essa chaves 
+
+- Use o comando cd /local pra onde vc quer ir e voce irá para a pasta 
+- O comando ls vai listar pra você o que tem dentro da pasta, e deve então neste caso aparecer a sua chave. 
+
+- comando cat id_ed25519.pub 
+A chave exposta no github, é a PÚBLICA 
+Dando enter nesse comando é mostrada a chave Pública que é a que colocamos lá no Github. Depois de ter colocado a chave no Github, você volta pro Git bash. 
+Execute o comando ls, para ver em que lugar você está 
+Comando pwd te mostra o caminho para chegar ali 
+
+- Para iniciar o SSH agent 
+Digite eval $(ssh-agent -s)
+ ele te dará um número, de estar startando um projeto
+
+Em seguida vamos entregar nossa chave para esse ssh-agent 
+-Digite ssh-add e vamos passar o caminho da chave onde estamos.
+Pra esse agent nós passamos a chave Privada, para que ele possa abrir um arquivo quando ele vier pra nossa máquina. 
+Ele pede a nossa senha, a digitada acima e é isso. 
+
+
+OBS: você vai clonar um repertório, tendo uma chave ssh, nós vamos clonar pelo ssh. 
+
+Clonando um repositório
+
+Copie o ssh de um repositório lá no Github
+volte no terminal 
+Vá para a pasta onde você quer que esse repositorio fique (pode ir manualmente mesmo, ou por comandos no git bash) 
+
+git clone e cole o caminho ssh e enter 
+Ele vai perguntar , você coloca 'yes' 
+E já será clonado
+
+comando ls 
+você vai ver o repositório colado na sua máquina. 
